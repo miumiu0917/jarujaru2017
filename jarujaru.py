@@ -26,9 +26,10 @@ def main():
 
 
 def goto(boke):
-  s = jaconv.hira2kata(boke.decode('utf-8'))
+  s = boke.decode('utf-8')
   if s == u'やったら絶対できる子やねん':
     return u'よしよしすな'
+  s = jaconv.hira2kata(s)
   ends_with_rice, s = rice(s)
   noise = len(filter(lambda x: not x in [u'ピ', u'ン', u'ポ', u'パ', u'ー'], list(s)))
   if noise:
